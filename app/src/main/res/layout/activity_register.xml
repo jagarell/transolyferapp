@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.activity.RegisterActivity"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rlaHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/colorBackgroundBlue">
+
+            <TextView
+                android:id="@+id/tvVersionName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorRed1"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:text="V."/>
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorRed1"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/tvVersionName"/>
+
+            <ImageView
+                android:id="@+id/ivPendings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_info"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:padding="6dp"
+                android:scaleType="fitXY"
+                android:visibility="gone"/>
+
+            <ImageButton
+                android:id="@+id/ibIntranet"
+                android:layout_height="48dp"
+                android:layout_width="48dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:visibility="visible"
+                android:padding="1dp"
+                android:src="@drawable/ic_intranet"/>
+
+            <ImageButton
+                android:id="@+id/ibSync"
+                android:layout_height="48dp"
+                android:layout_width="48dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                android:padding="1dp"
+                android:src="@drawable/ic_sync"/>
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rlaHeader"
+            android:layout_above="@+id/plBottom">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/llOffline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cboOffline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="2"
+                        android:text="@string/s_register_offline" />
+                </LinearLayout>
+
+                <net.transolyfer.transolyfergo.app.ui.components.CustomButton
+                    android:id="@+id/btnScan"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="@string/s_scan"
+                    android:background="@drawable/rounded_bottom"
+                    android:textColor="@color/colorWhite"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/llOffline"/>
+
+                <androidx.percentlayout.widget.PercentRelativeLayout
+                    android:id="@+id/codeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btnScan"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp">
+
+                    <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                        android:id="@+id/tvCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/s_code"/>
+
+
+                    <EditText
+                        android:id="@+id/etCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:maxLength="13"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rounded_edit_text"
+                        android:inputType="number"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="5dp"
+                        android:textSize="16sp"
+                        android:lines="1"
+                        android:layout_below="@+id/tvCode"
+                        android:layout_marginTop="10dp"/>
+
+                </androidx.percentlayout.widget.PercentRelativeLayout>
+
+                <androidx.percentlayout.widget.PercentRelativeLayout
+                    android:id="@+id/enterpriseLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/codeLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp">
+
+                    <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                        android:id="@+id/tvEnterprise"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/s_enterprise"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvEnterprise"
+                        android:layout_marginTop="10dp">
+
+                        <Spinner
+                            android:id="@+id/spEnterprise"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:spinnerMode="dialog"
+                            style="@style/SpinnerAppTheme"/>
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentRight="true"
+                            android:padding="5dp"
+                            android:tint="@color/colorGray1"/>
+                    </RelativeLayout>
+
+                </androidx.percentlayout.widget.PercentRelativeLayout>
+
+                <androidx.percentlayout.widget.PercentRelativeLayout
+                    android:id="@+id/eventLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/enterpriseLayout"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp">
+
+                    <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                        android:id="@+id/tvEvent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="@string/s_event"
+                        android:layout_marginTop="10dp"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvEvent"
+                        android:layout_marginTop="10dp">
+                        <Spinner
+                            android:id="@+id/spEvents"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:spinnerMode="dialog"
+                            style="@style/SpinnerAppTheme"/>
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentRight="true"
+                            android:padding="5dp"
+                            android:tint="@color/colorGray1"/>
+                    </RelativeLayout>
+                </androidx.percentlayout.widget.PercentRelativeLayout>
+
+                <net.transolyfer.transolyfergo.app.ui.components.CustomButton
+                    android:id="@+id/btnShowDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Ver detalle"
+                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/rounded_bottom_orange"
+                    android:layout_below="@+id/eventLayout"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:textStyle="bold"/>
+
+                <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                    android:id="@+id/tvObservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_observation"
+                    android:layout_gravity="center"
+                    app:layout_widthPercent="50%"
+                    android:layout_below="@id/btnShowDetail"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"/>
+                <net.transolyfer.transolyfergo.app.ui.components.CustomEditText
+                    android:id="@+id/etObservation"
+                    android:inputType="textMultiLine"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:gravity="top"
+                    android:padding="5dp"
+                    android:background="@drawable/rounded_edit_text"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:lines="5"
+                    android:layout_below="@+id/tvObservation"
+                    android:overScrollMode="always"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical" />
+
+                <LinearLayout
+                    android:layout_below="@+id/etObservation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvPhoto1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Foto referencial"
+                            android:layout_gravity="center"/>
+                        <ImageView
+                            android:id="@+id/ivPhoto1"
+                            android:layout_width="160dp"
+                            android:layout_height="100dp"
+                            android:layout_marginRight="10dp"
+                            android:visibility="visible"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/shape_round_white_stroke_gray"
+                            android:padding="3dp"
+                            android:src="@drawable/placeholder_photo"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvPhoto2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Foto de cargo"
+                            android:layout_gravity="center"/>
+                        <ImageView
+                            android:id="@+id/ivPhotoCargo"
+                            android:layout_width="160dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="10dp"
+                            android:visibility="visible"
+                            android:scaleType="fitXY"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/shape_round_white_stroke_gray"
+                            android:padding="3dp"
+                            android:src="@drawable/placeholder_photo"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/plBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Enviar"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorGreen2"
+                android:layout_alignParentLeft="true"
+                android:textStyle="bold"
+                android:layout_weight="4"/>
+            <ImageView
+                android:id="@+id/ivPhoto"
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_camera"
+                android:tint="@color/colorLightGray"
+                android:enabled="false"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/layout_loading"
+        android:id="@+id/vieLoading"
+        android:visibility="gone"/>
+</RelativeLayout>

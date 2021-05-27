@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "547717561086",
+    "firebase_url": "https://transolyfergo.firebaseio.com",
+    "project_id": "transolyfergo",
+    "storage_bucket": "transolyfergo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547717561086:android:50f71ad5c366723f30c3af",
+        "android_client_info": {
+          "package_name": "net.transolyfer.transolyfergo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547717561086-tf0lvlivqpq4cu521f6vv3k6fskectdd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwRjQkNTMvUZZEs39aZg6dHoionc9Mfeo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547717561086-tf0lvlivqpq4cu521f6vv3k6fskectdd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.activity.DetailOrderActivity"
+    android:orientation="vertical"
+    android:background="#0099CC">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rlaHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/colorBackgroundBlue">
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_back"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"/>
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/ibIntranet"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="Intranet"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorWhite"
+            android:layout_below="@+id/rlaHeader"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/shape_oval_edge"
+            android:layout_margin="25dp"
+            android:padding="15dp"
+            android:layout_centerInParent="true">
+
+            <RelativeLayout
+                android:id="@+id/layout_images"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logoconfidencial"
+                    android:layout_centerInParent="true"
+                    android:tint="@color/colorGray1"/>
+            </RelativeLayout>
+
+
+            <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:id="@+id/llUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/shape_oval_edge_edittext"
+                    android:padding="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_account"
+                        android:tint="@color/colorGray1"/>
+
+                    <net.transolyfer.transolyfergo.app.ui.components.CustomEditText
+                        android:id="@+id/etUser"
+                        style="@style/login_editText"
+                        android:hint="@string/s_intranet_user"
+                        android:inputType="text"
+                        android:tag="1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/shape_oval_edge_edittext"
+                    android:padding="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/llUser"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ic_key"
+                        android:tint="@color/colorGray1"/>
+
+                    <net.transolyfer.transolyfergo.app.ui.components.CustomEditText
+                        android:id="@+id/etPassword"
+                        style="@style/login_editText"
+                        android:hint="@string/s_intranet_password"
+                        android:inputType="textPassword"
+                        android:tag="1"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRemember"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_below="@+id/llPassword">
+
+            <CheckBox
+                android:id="@+id/cboRemember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="2"
+                android:text="@string/s_intranet_remember" />
+        </LinearLayout>
+
+        <net.transolyfer.transolyfergo.app.ui.components.CustomButton
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/s_intranet_login"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/rounded_bottom_orange"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/llRemember"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/layout_loading"
+        android:id="@+id/vieLoading"
+        android:visibility="gone"/>
+</RelativeLayout>

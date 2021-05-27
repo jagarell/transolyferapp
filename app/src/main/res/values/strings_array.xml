@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="enterprise_array">
+        <item>&#60;--Seleccione--&#62;</item>
+        <item>NATURA</item>
+        <item>MARY KAY</item>
+    </string-array>
+    <string-array name="event_array">
+        <item>&#60;--Seleccione--&#62;</item>
+        <item>PEDIDO ENTREGADO</item>
+        <item>AUSENTE PRIMERA VISITA</item>
+        <item>AUSENTE SEGUNDA VISITA</item>
+        <item>DIRECCIÓN INCORRECTA</item>
+        <item>CLIENTE RECHAZA PEDIDO</item>
+        <item>PROBLEMA CLIMÁTICA / SOCIAL</item>
+        <item>ZONA PELIGROSA</item>
+        <item>ZONA DE DIFÍCIL ACCESO</item>
+        <item>OTROS</item>
+    </string-array>
+</resources>

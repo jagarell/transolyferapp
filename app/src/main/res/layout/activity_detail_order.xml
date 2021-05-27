@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.activity.DetailOrderActivity"
+    android:orientation="vertical"
+    android:background="@color/colorWhite">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/rlaHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:minHeight="?attr/actionBarSize"
+            android:background="@color/colorBackgroundBlue">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_back"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY" />
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/ibIntranet"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:text="Detalle pedido"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"/>
+
+        </RelativeLayout>
+
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:id="@+id/nameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlaHeader"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp">
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                app:layout_widthPercent="50%"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/s_detail_name"
+                android:layout_centerVertical="true"/>
+
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/tvName"
+                app:layout_widthPercent="50%"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_edit_text"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="5dp"
+                android:lines="1"
+                android:layout_centerVertical="true"
+                android:scrollbars="horizontal"
+                android:gravity="center_vertical"
+                android:textIsSelectable="true"/>
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:id="@+id/phonoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp">
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/tvPhotoTextView"
+                app:layout_widthPercent="50%"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/s_detail_phono"
+                android:layout_centerVertical="true"/>
+
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/tvPhono"
+                app:layout_widthPercent="39%"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_edit_text"
+                android:paddingLeft="5dp"
+                android:lines="1"
+                android:layout_toRightOf="@+id/tvPhotoTextView"
+                android:layout_centerVertical="true"
+                android:scrollbars="horizontal"
+                android:gravity="center_vertical"
+                android:textIsSelectable="true"/>
+
+            <ImageView
+                android:id="@+id/ivCall"
+                android:src="@drawable/ic_call"
+                android:background="@drawable/rounded_image_call"
+                android:layout_height="35dp"
+                app:layout_widthPercent="10%"
+                android:layout_alignParentRight="true"
+                android:padding="1dp"/>
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:id="@+id/numberPieceLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phonoLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp">
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/tvNumberTextView"
+                app:layout_widthPercent="50%"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/s_detail_number"
+                android:layout_centerVertical="true"/>
+
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/tvNumber"
+                app:layout_widthPercent="20%"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_edit_text"
+                android:paddingLeft="5dp"
+                android:lines="1"
+                android:layout_toRightOf="@+id/tvNumberTextView"
+                android:layout_centerVertical="true"
+                android:scrollbars="horizontal"
+                android:gravity="center_vertical"
+                android:textIsSelectable="true"/>
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/addressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/numberPieceLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/s_detail_addres"
+                android:layout_centerVertical="true"/>
+
+            <net.transolyfer.transolyfergo.app.ui.components.CustomTextView
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_edit_text"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="5dp"
+                android:lines="6"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:textIsSelectable="true"/>
+
+        </LinearLayout>
+
+
+
+        <net.transolyfer.transolyfergo.app.ui.components.CustomButton
+            android:id="@+id/btnShowUbication"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/s_detail_show_ubication"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/rounded_bottom_orange"
+            android:layout_margin="15dp"
+            android:layout_below="@+id/addressLayout"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <include
+        layout="@layout/layout_loading"
+        android:id="@+id/vieLoading"
+        android:visibility="gone"/>
+</RelativeLayout>
